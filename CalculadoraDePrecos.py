@@ -58,7 +58,7 @@ def metodo_pagamento(total_consumo_com_imposto):
     
     troco = valor_pagamento - total_consumo_com_imposto
     
-    print(f"Troco: {troco}")
+    print(f"Troco: R$ {troco:.3}")
 
     return valor_pagamento, troco
 
