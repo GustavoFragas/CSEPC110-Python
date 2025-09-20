@@ -4,6 +4,11 @@ Gustavo Fragas Cunha
 06/09/2025
 
 RPG
+
+-Criação de Métodos para facilitar e colocar alguns efeitos visuais
+
+Comentário da minha mãe: "Ficou bem divertido, você é tipo um hacker né? Como você fez isso, é literalmente muita linha o que você teve que escrever"
+
 """
 import time
 
