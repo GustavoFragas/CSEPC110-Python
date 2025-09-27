@@ -1,3 +1,18 @@
+"""
+Gustavo Fragas Cunha
+20 anos
+06/09/2025
+
+-Calculadora de Preço de Refeições
+
+Criatividade:
+
+-Uso do import os, para limpar a tela
+
+-Ao invés de criar outro loop dentro de um loop para verificar as letras se existem, descobri que o "IN" já fazia esse trabalho de maneira mais simples. O rascunho está logo abaixo como comentários.
+
+"""
+
 import os
 
 print()
@@ -14,6 +29,8 @@ while escolha < 1 or escolha > 3:
 
 os.system('cls' if os.name == 'nt' else 'clear')
 
+contador = 0
+
 if escolha == 1:
     print("Você escolheu o nível fácil")
     palavra_facil = nome.lower()
@@ -24,17 +41,18 @@ if escolha == 1:
         print("_", end="")
         
     print()
-    chute = ""
-    while chute.lower() != palavra_facil.lower():
+    chute_facil = ""
+    while chute_facil.lower() != palavra_facil.lower():
+        contador += 1
+        print()
+        chute_facil = input("Dê o seu palpite: \n> ")
+        os.system('cls' if os.name == 'nt' else 'clear')
         
         print()
-        chute = input("Dê o seu palpite: \n> ")
-        os.system('cls' if os.name == 'nt' else 'clear')
-
-        print()
         for i in range(numero_de_letras_facil):
-            if i < len(chute):
-                letra_palpite = chute[i]
+            
+            if i < len(chute_facil):
+                letra_palpite = chute_facil[i]
                 letra_palavra = palavra_facil[i]
 
                 if letra_palpite.lower() == letra_palavra.lower():
@@ -48,8 +66,78 @@ if escolha == 1:
                 print ("_", end="")
     print()
     print("Você acertou a palavra!")
+    print(f"Você precisou de {contador} palpites !")
 
-    
+elif escolha == 2:
+    print("Você escolheu o nível médio")
+    palavra_media = "Morango"    
+    numero_de_letras_media = len(palavra_media)
+
+    print("Sua dica é: ", end="")
+    for i in range(numero_de_letras_media):
+        print("_", end="")
+
+    print()
+    chute_medio = ""
+    while palavra_media.lower() != chute_medio.lower():
+        contador += 1 
+        print()
+        chute_medio = input("Dê o seu palpite: \n> ")
+        os.system('cls' if os.name == 'nt' else 'clear')    
+
+        print()
+        for i in range(numero_de_letras_media):
+            if i < len(chute_medio):
+                letra_palpite = chute_medio[i]
+                letra_palavra = palavra_media[i]
+                if letra_palpite.lower() == letra_palavra.lower():
+                    print(letra_palpite.upper(), end="")
+                elif letra_palpite.lower() in letra_palavra.lower():
+                    print(letra_palpite.lower(), end="")
+                else:
+                    print("_", end="")
+                
+            else:    
+                print ("_", end="")
+    print()
+    print("Você acertou a palavra!")    
+    print(f"Você precisou de {contador} palpites !")
+
+elif escolha == 3:
+    print("Você escolheu o nível médio")
+    palavra_dificil = "Pindamonhangaba"    
+    numero_de_letras_dificil = len(palavra_dificil)
+
+    print("Sua dica é: ", end="")
+    for i in range(numero_de_letras_dificil):
+        print("_", end="")
+
+    print()
+    chute_dificil = ""
+    while palavra_dificil.lower() != chute_dificil.lower():
+        contador += 1
+        print()
+        chute_dificil = input("Dê o seu palpite: \n> ")
+        os.system('cls' if os.name == 'nt' else 'clear')    
+
+        print()
+        for i in range(numero_de_letras_dificil):
+            if i < len(chute_dificil):
+                letra_palpite = chute_dificil[i]
+                letra_palavra = palavra_dificil[i]
+                if letra_palpite.lower() == letra_palavra.lower():
+                    print(letra_palpite.upper(), end="")
+                elif letra_palpite.lower() in letra_palavra.lower():
+                    print(letra_palpite.lower(), end="")
+                else:
+                    print("_", end="")
+                
+            else:    
+                print ("_", end="")
+    print()
+    print("Você acertou a palavra!")    
+    print(f"Você precisou de {contador} palpites !")
+
 
 
 
