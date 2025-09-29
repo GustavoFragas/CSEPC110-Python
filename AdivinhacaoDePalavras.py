@@ -41,14 +41,36 @@ if escolha == 1:
         print("_", end="")
         
     print()
+    dica = 0
     chute_facil = ""
     while chute_facil.lower() != palavra_facil.lower():
         contador += 1
+        dica += 1
+
+        if dica == 1:
+            print()
+            print("Sua primeira dica é:\n A resposta é uma pessoa muito especial para você!")
+        elif dica == 2:
+            print()
+            print("Sua segunda dica é:\n Seus responsáveis que tiveram a ideia dessa palavra")
+        elif dica == 3:
+            print()
+            print("Sua terceira dica é:\n Você mesmo já escrevou a resposta!")
+        elif dica > 3:
+            print()
+            print("Suas dicas são:\n A resposta é uma pessoa muito especial para você!")
+            print("Sua segunda dica é:\n Seus responsáveis que tiveram a ideia dessa palavra")
+            print("Sua terceira dica é:\n Você mesmo já escrevou a resposta!")
         print()
         chute_facil = input("Dê o seu palpite: \n> ")
         os.system('cls' if os.name == 'nt' else 'clear')
+
+        while len(chute_facil) != len(palavra_facil):
+            os.system('cls' if os.name == 'nt' else 'clear')
+            chute_facil = (input("Por favor digite uma palavra com a mesma quantidade de letras que a dica:\n> "))
         
         print()
+
         for i in range(numero_de_letras_facil):
             
             if i < len(chute_facil):
@@ -64,6 +86,7 @@ if escolha == 1:
                 
             else:    
                 print ("_", end="")
+            
     print()
     print("Você acertou a palavra!")
     print(f"Você precisou de {contador} palpites !")
@@ -80,10 +103,30 @@ elif escolha == 2:
     print()
     chute_medio = ""
     while palavra_media.lower() != chute_medio.lower():
-        contador += 1 
+        contador += 1
+        dica += 1
+
+        if dica == 1:
+            print()
+            print("Sua primeira dica é:\n Vermelho")
+        elif dica == 2:
+            print()
+            print("Sua segunda dica é:\n Fruta")
+        elif dica == 3:
+            print()
+            print("Sua terceira dica é:\n '_______ do amor'!")
+        elif dica > 3:
+            print()
+            print("Sua primeira dica é:\n Vermelho")
+            print("Sua segunda dica é:\n Fruta")
+            print("Sua terceira dica é:\n '_______ do amor'!")
         print()
         chute_medio = input("Dê o seu palpite: \n> ")
         os.system('cls' if os.name == 'nt' else 'clear')    
+
+        while len(chute_medio) != len(palavra_media):
+            os.system('cls' if os.name == 'nt' else 'clear')
+            chute_medio = (input("Por favor digite uma palavra com a mesma quantidade de letras que a dica:\n> "))
 
         print()
         for i in range(numero_de_letras_media):
@@ -113,12 +156,34 @@ elif escolha == 3:
         print("_", end="")
 
     print()
+    dica = 0 
     chute_dificil = ""
     while palavra_dificil.lower() != chute_dificil.lower():
         contador += 1
+        dica += 1
+
+        if dica == 1:
+            print()
+            print("Sua primeira dica é:\n Município de São Paulo")
+        elif dica == 2:
+            print()
+            print("Sua segunda dica é:\n Perto de Campos do Jordão")
+        elif dica == 3:
+            print()
+            print("Sua terceira dica é:\n  Região Metropolitana do Vale do Paraíba e Litoral Norte no interior do estado de São Paulo.")
+        elif dica > 3:
+            print()
+            print("Suas dicas são:\n Município de São Paulo")
+            print("Sua segunda dica é:\n Perto de Campos do Jordão")
+            print("Sua terceira dica é:\n  Região Metropolitana do Vale do Paraíba e Litoral Norte no interior do estado de São Paulo.")
+
         print()
         chute_dificil = input("Dê o seu palpite: \n> ")
-        os.system('cls' if os.name == 'nt' else 'clear')    
+        os.system('cls' if os.name == 'nt' else 'clear')
+
+        while len(chute_dificil) != len(palavra_dificil):
+            os.system('cls' if os.name == 'nt' else 'clear')
+            chute_dificil = (input("Por favor digite uma palavra com a mesma quantidade de letras que a dica:\n> "))    
 
         print()
         for i in range(numero_de_letras_dificil):
